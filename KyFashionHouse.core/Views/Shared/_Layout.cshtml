@@ -1,0 +1,439 @@
+﻿```cshtml
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Ky Fashion House</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet" />
+
+    <!-- EShopper CSS -->
+    <link href="~/eshopper-1.0.0/lib/owlcarousel/assets/owl.carousel.min.css"
+          rel="stylesheet" />
+
+    <link href="~/eshopper-1.0.0/css/style.css"
+          rel="stylesheet" />
+</head>
+
+<body>
+
+    ```cshtml
+    <!-- ÜST BİLGİ BAR -->
+    <div class="container-fluid bg-light border-bottom">
+        <div class="row py-2 px-xl-5 align-items-center">
+
+            <div class="col-lg-6 d-none d-lg-block">
+                <small class="text-muted">
+                    Ky Fashion House'a hoş geldiniz
+                </small>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-right">
+                <a href="#" class="text-muted px-2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#" class="text-muted px-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="text-muted px-2">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a href="#" class="text-muted pl-2">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- LOGO + ARAMA + SEPET -->
+    <div class="container-fluid bg-white">
+        <div class="row align-items-center py-4 px-xl-5">
+
+            <!-- LOGO -->
+            <div class="col-lg-3 d-none d-lg-block">
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="text-decoration-none">
+
+                    <h1 class="m-0 font-weight-bold text-dark"
+                        style="font-size: 28px;">
+
+                        <span class="text-primary mr-1">
+                            KY
+                        </span>
+
+                        Fashion House
+
+                    </h1>
+
+                </a>
+
+            </div>
+
+
+            <!-- ARAMA -->
+            <div class="col-lg-6 col-8">
+
+                <div class="input-group">
+
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Ürün, kategori veya marka ara..."
+                           style="height: 45px;" />
+
+                    <div class="input-group-append">
+
+                        <button class="btn btn-primary px-4"
+                                type="button">
+
+                            <i class="fa fa-search"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAVORİ / SEPET -->
+            <div class="col-lg-3 col-4 text-right">
+
+                <a href="#"
+                   class="text-dark text-decoration-none mr-3">
+
+                    <i class="fas fa-heart fa-lg text-primary"></i>
+
+                    <span class="d-none d-lg-inline ml-1">
+                        Favoriler
+                    </span>
+
+                </a>
+
+
+                <a href="#"
+                   class="text-dark text-decoration-none">
+
+                    <i class="fas fa-shopping-bag fa-lg text-primary"></i>
+
+                    <span class="d-none d-lg-inline ml-1">
+                        Sepet
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- NAVBAR + KATEGORİLER -->
+    <div class="container-fluid border-top border-bottom bg-white">
+
+        <div class="row px-xl-5">
+
+            <!-- KATEGORİLER -->
+            <div class="col-lg-3 d-none d-lg-block">
+
+                <a class="btn btn-primary d-flex align-items-center justify-content-between w-100"
+                   data-toggle="collapse"
+                   href="#navbar-vertical"
+                   style="height: 55px;">
+
+                    <span class="font-weight-semi-bold">
+                        Kategoriler
+                    </span>
+
+                    <i class="fa fa-angle-down"></i>
+
+                </a>
+
+
+                <nav id="navbar-vertical"
+                     class="collapse show">
+
+                    <div class="navbar-nav w-100 border-left border-right border-bottom">
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Şort T-Shirt Takımları
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            T-Shirtler
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Pantolonlar
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Kazaklar
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Hırkalar
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Gömlekler
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Ceketler
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Kapri Şortlar
+                        </a>
+
+                        <a href="#"
+                           class="nav-item nav-link py-3 px-4">
+                            Şapkalar
+                        </a>
+
+                    </div>
+
+                </nav>
+
+            </div>
+
+
+            <!-- SAĞ TARAF -->
+            <div class="col-lg-9">
+
+                <nav class="navbar navbar-expand-lg navbar-light px-0"
+                     style="min-height: 55px;">
+
+                    <!-- MOBİL LOGO -->
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="text-decoration-none d-lg-none">
+
+                        <span class="font-weight-bold text-dark">
+                            <span class="text-primary">KY</span>
+                            Fashion House
+                        </span>
+
+                    </a>
+
+
+                    <!-- MOBİL BUTON -->
+                    <button type="button"
+                            class="navbar-toggler"
+                            data-toggle="collapse"
+                            data-target="#mainNavbar">
+
+                        <span class="navbar-toggler-icon"></span>
+
+                    </button>
+
+
+                    <div class="collapse navbar-collapse"
+                         id="mainNavbar">
+
+                        <div class="navbar-nav mr-auto">
+
+                            <a asp-controller="Home"
+                               asp-action="Index"
+                               class="nav-item nav-link active px-3">
+
+                                Ana Sayfa
+
+                            </a>
+
+                            <a href="#"
+                               class="nav-item nav-link px-3">
+
+                                Mağaza
+
+                            </a>
+
+                            <a href="#"
+                               class="nav-item nav-link px-3">
+
+                                Yeni Ürünler
+
+                            </a>
+
+                            <a href="#"
+                               class="nav-item nav-link px-3">
+
+                                İletişim
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="navbar-nav">
+
+                            <a href="#"
+                               class="nav-item nav-link">
+
+                                <i class="fas fa-user mr-1"></i>
+                                Giriş Yap
+
+                            </a>
+
+                            <a href="#"
+                               class="nav-item nav-link">
+
+                                Kayıt Ol
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </nav>
+
+
+                <!-- SAYFA İÇERİĞİ -->
+                @RenderBody()
+
+            </div>
+
+        </div>
+
+    </div>
+    ```
+
+    <!-- FOOTER -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+
+        <div class="row px-xl-5 pt-5">
+
+            <div class="col-lg-4 col-md-12 mb-5">
+
+                <h5 class="font-weight-bold text-dark mb-4">
+                    Ky Fashion House
+                </h5>
+
+                <p>
+                    Kaliteli ve modaya uygun kıyafetleri
+                    sizlerle buluşturuyoruz.
+                </p>
+
+                <p>
+                    <i class="fa fa-map-marker-alt text-primary mr-3"></i>
+                    İstanbul, Türkiye
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-12 mb-5">
+
+                <h5 class="font-weight-bold text-dark mb-4">
+                    Bilgi
+                </h5>
+
+                <a href="#" class="d-block text-dark mb-2">
+                    Hakkımızda
+                </a>
+
+                <a href="#" class="d-block text-dark mb-2">
+                    İletişim
+                </a>
+
+                <a href="#" class="d-block text-dark mb-2">
+                    Gizlilik Politikası
+                </a>
+
+                <a href="#" class="d-block text-dark mb-2">
+                    Kullanım Koşulları
+                </a>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-12 mb-5">
+
+                <h5 class="font-weight-bold text-dark mb-4">
+                    Müşteri Hizmetleri
+                </h5>
+
+                <p>
+                    <i class="fa fa-phone-alt text-primary mr-3"></i>
+                    7/24 Destek
+                </p>
+
+                <p>
+                    <i class="fa fa-truck text-primary mr-3"></i>
+                    Ücretsiz Kargo
+                </p>
+
+                <p>
+                    <i class="fa fa-exchange-alt text-primary mr-3"></i>
+                    14 Gün Değişim Süreci
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="row border-top border-light mx-xl-5 py-4">
+
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; @DateTime.Now.Year
+                    <strong>Ky Fashion House</strong>.
+                    Tüm hakları saklıdır.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/eshopper-1.0.0/lib/easing/easing.js"></script>
+
+    <script src="~/eshopper-1.0.0/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="~/eshopper-1.0.0/mail/jqBootstrapValidation.min.js"></script>
+
+    <script src="~/eshopper-1.0.0/mail/contact.js"></script>
+
+    <script src="~/eshopper-1.0.0/js/main.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
+```

@@ -1,0 +1,423 @@
+﻿```cshtml
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<!-- ANA SAYFA BAŞLANGIÇ -->
+<!-- ÜST BİLGİLER -->
+<div class="row px-xl-5 pb-3">
+
+    <div class="col-lg-3 col-md-6 pb-1">
+        <div class="d-flex align-items-center border mb-4"
+             style="padding: 30px;">
+
+            <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+
+            <h5 class="font-weight-semi-bold m-0">
+                Kaliteli Ürünler
+            </h5>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 pb-1">
+        <div class="d-flex align-items-center border mb-4"
+             style="padding: 30px;">
+
+            <h1 class="fa fa-shipping-fast text-primary m-0 mr-3"></h1>
+
+            <h5 class="font-weight-semi-bold m-0">
+                Ücretsiz Kargo
+            </h5>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 pb-1">
+        <div class="d-flex align-items-center border mb-4"
+             style="padding: 30px;">
+
+            <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+
+            <h5 class="font-weight-semi-bold m-0">
+                14 Gün Değişim Süreci
+            </h5>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6 pb-1">
+        <div class="d-flex align-items-center border mb-4"
+             style="padding: 30px;">
+
+            <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+
+            <h5 class="font-weight-semi-bold m-0">
+                7/24 Destek
+            </h5>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- KAMPANYA / CAROUSEL -->
+<div class="row px-xl-5 pb-3">
+
+    <div class="col-lg-12">
+
+        <div id="header-carousel"
+             class="carousel slide"
+             data-ride="carousel">
+
+            <ol class="carousel-indicators">
+
+                <li data-target="#header-carousel"
+                    data-slide-to="0"
+                    class="active"></li>
+
+                <li data-target="#header-carousel"
+                    data-slide-to="1"></li>
+
+                <li data-target="#header-carousel"
+                    data-slide-to="2"></li>
+
+            </ol>
+
+
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active"
+                     style="height: 410px;">
+
+                    <img class="w-100 h-100"
+                         src="~/eshopper-1.0.0/img/carousel-1.jpg"
+                         style="object-fit: cover;"
+                         alt="Kaliteli Ürünler">
+
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="p-3"
+                             style="max-width: 700px;">
+
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3">
+                                Kaliteli Ürünler
+                            </h4>
+
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+                                Tarzını Yansıt
+                            </h3>
+
+                            <a href="#"
+                               class="btn btn-light py-2 px-3">
+                                Alışverişe Başla
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item"
+                     style="height: 410px;">
+
+                    <img class="w-100 h-100"
+                         src="~/eshopper-1.0.0/img/carousel-2.jpg"
+                         style="object-fit: cover;"
+                         alt="Modaya Uygun Kıyafetler">
+
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="p-3"
+                             style="max-width: 700px;">
+
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3">
+                                Modaya Uygun Kıyafetler
+                            </h4>
+
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+                                Yeni Sezon
+                            </h3>
+
+                            <a href="#"
+                               class="btn btn-light py-2 px-3">
+                                Alışverişe Başla
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-item"
+                     style="height: 410px;">
+
+                    <img class="w-100 h-100"
+                         src="~/eshopper-1.0.0/img/carousel-1.jpg"
+                         style="object-fit: cover;"
+                         alt="Alışverişe Başla">
+
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="p-3"
+                             style="max-width: 700px;">
+
+                            <h4 class="text-light text-uppercase font-weight-medium mb-3">
+                                Ky Fashion House
+                            </h4>
+
+                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+                                Alışverişe Başla
+                            </h3>
+
+                            <a href="#"
+                               class="btn btn-light py-2 px-3">
+                                Ürünleri Gör
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a class="carousel-control-prev"
+               href="#header-carousel"
+               data-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </a>
+
+
+            <a class="carousel-control-next"
+               href="#header-carousel"
+               data-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ÖNE ÇIKAN ÜRÜNLER -->
+<div class="container-fluid pt-5">
+
+    <div class="text-center mb-4">
+
+        <h2 class="section-title px-5">
+
+            <span class="px-2">
+                Öne Çıkan Ürünler
+            </span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="row px-xl-5 pb-3">
+
+        <!-- ÜRÜN 1 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+
+            <div class="card product-item border-0 mb-4">
+
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+
+                    <img class="img-fluid w-100"
+                         src="~/images/Hermes Siyah.jpeg"
+                         alt="Siyah Hermes T-Shirt">
+
+                </div>
+
+
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+
+                    <h6 class="text-truncate mb-3">
+                        Siyah Hermes T-Shirt
+                    </h6>
+
+                    <div class="d-flex justify-content-center">
+
+                        <h6>
+                            500.00₺
+                        </h6>
+
+                        <h6 class="text-muted ml-2">
+                            <del>600.00₺</del>
+                        </h6>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer d-flex justify-content-between bg-light border">
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-eye text-primary mr-1"></i>
+                        Detay
+
+                    </a>
+
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>
+                        Sepete Ekle
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ÜRÜN 2 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+
+            <div class="card product-item border-0 mb-4">
+
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+
+                    <img class="img-fluid w-100"
+                         src="~/images/Burbery Siyah.jpeg"
+                         alt="Burberry Siyah T-Shirt">
+
+                </div>
+
+
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+
+                    <h6 class="text-truncate mb-3">
+                        Burberry Siyah T-Shirt
+                    </h6>
+
+                    <div class="d-flex justify-content-center">
+
+                        <h6>
+                            500.00₺
+                        </h6>
+
+                        <h6 class="text-muted ml-2">
+                            <del>600.00₺</del>
+                        </h6>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer d-flex justify-content-between bg-light border">
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-eye text-primary mr-1"></i>
+                        Detay
+
+                    </a>
+
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>
+                        Sepete Ekle
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ÜRÜN 3 -->
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+
+            <div class="card product-item border-0 mb-4">
+
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+
+                    <img class="img-fluid w-100"
+                         src="~/images/Zara Siyah Gömlek.jpeg"
+                         alt="Zara Siyah Gömlek">
+
+                </div>
+
+
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+
+                    <h6 class="text-truncate mb-3">
+                        Zara Siyah Gömlek
+                    </h6>
+
+                    <div class="d-flex justify-content-center">
+
+                        <h6>
+                            650.00₺
+                        </h6>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer d-flex justify-content-between bg-light border">
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-eye text-primary mr-1"></i>
+                        Detay
+
+                    </a>
+
+
+                    <a href="#"
+                       class="btn btn-sm text-dark p-0">
+
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>
+                        Sepete Ekle
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ANA SAYFA SON -->
+```
