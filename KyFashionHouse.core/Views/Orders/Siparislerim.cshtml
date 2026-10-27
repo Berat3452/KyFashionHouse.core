@@ -1,0 +1,50 @@
+﻿@model List<KyFashionHouse.core.Models.Order>
+
+@{
+    ViewData["Title"] = "Siparişlerim";
+}
+
+<div class="container py-5">
+    <h2 class="mb-4">Siparişlerim</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th>Sipariş No</th>
+                        <th>Sipariş Tarihi</th>
+                        <th>Toplam Tutar</th>
+                        <th>Sipariş Durumu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var siparis in Model)
+                    {
+                        <tr>
+                            <td>@siparis.Id</td>
+                            <td>@siparis.OrderDate.ToString("dd.MM.yyyy HH:mm")</td>
+                            <td>@siparis.TotalAmount.ToString("N2") ₺</td>
+                            <td>@siparis.Status</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5">
+            <h5>Henüz bir siparişin bulunmuyor.</h5>
+            <p class="text-muted">
+                Sipariş verdiğinde burada görüntüleyebilirsin.
+            </p>
+            <a asp-controller="Home"
+               asp-action="Tshirtler"
+               class="btn btn-primary">
+                Alışverişe Başla
+            </a>
+        </div>
+    }
+</div>

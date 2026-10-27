@@ -1,5 +1,4 @@
-﻿```cshtml
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 
 <head>
@@ -27,7 +26,6 @@
 
 <body>
 
-    ```cshtml
     <!-- ÜST BİLGİ BAR -->
     <div class="container-fluid bg-light border-bottom">
         <div class="row py-2 px-xl-5 align-items-center">
@@ -112,32 +110,52 @@
 
             </div>
 
+            <!-- FAVORİ / SEPET / PROFİL -->
+            <div class="col-lg-3 col-4 d-flex align-items-center justify-content-end">
 
-            <!-- FAVORİ / SEPET -->
-            <div class="col-lg-3 col-4 text-right">
-
-                <a href="#"
-                   class="text-dark text-decoration-none mr-3">
-
+                <!-- FAVORİLER -->
+                <a href="#" class="text-dark text-decoration-none mr-3">
                     <i class="fas fa-heart fa-lg text-primary"></i>
-
-                    <span class="d-none d-lg-inline ml-1">
-                        Favoriler
-                    </span>
-
+                    <span class="d-none d-lg-inline ml-1">Favoriler</span>
                 </a>
 
-
-                <a href="#"
-                   class="text-dark text-decoration-none">
-
+                <!-- SEPETİM -->
+                <a asp-controller="Home" asp-action="Sepet" class="text-dark text-decoration-none mr-3">
                     <i class="fas fa-shopping-bag fa-lg text-primary"></i>
-
-                    <span class="d-none d-lg-inline ml-1">
-                        Sepet
-                    </span>
-
+                    <span class="d-none d-lg-inline ml-1">Sepetim</span>
                 </a>
+
+                <!-- PROFİL DROPDOWN -->
+                <div class="dropdown">
+                    <a href="#" class="text-dark text-decoration-none" id="profilDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle fa-lg text-primary"></i>
+                        <span class="d-none d-lg-inline ml-1">Profilim</span>
+                        <i class="fas fa-angle-down ml-1" style="font-size: 12px;"></i>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="profilDropdown">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a class="dropdown-item" asp-controller="Orders" asp-action="Siparislerim">
+                                <i class="fas fa-box mr-2"></i> Siparişlerim
+                            </a>
+                            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
+                                <i class="fas fa-user-edit mr-2"></i> Profil Bilgilerim
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                                <button type="submit" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login">Giriş Yap</a>
+                            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Register">Kayıt Ol</a>
+                        }
+                    </div>
+                </div>
 
             </div>
 
@@ -172,14 +190,16 @@
 
                     <div class="navbar-nav w-100 border-left border-right border-bottom">
 
-                        <a href="#"
-                           class="nav-item nav-link py-3 px-4">
-                            Şort T-Shirt Takımları
-                        </a>
-
-                        <a href="#"
+                        <a asp-controller="Products"
+                           asp-action="Tshirtler"
                            class="nav-item nav-link py-3 px-4">
                             T-Shirtler
+                        </a>
+
+                        <a asp-controller="Home"
+                           asp-action="Sort_Tshirt_Takimlari"
+                           class="nav-item nav-link py-3 px-4">
+                            Şort T-Shirt Takımları
                         </a>
 
                         <a href="#"
@@ -289,27 +309,6 @@
                             </a>
 
                         </div>
-
-
-                        <div class="navbar-nav">
-
-                            <a href="#"
-                               class="nav-item nav-link">
-
-                                <i class="fas fa-user mr-1"></i>
-                                Giriş Yap
-
-                            </a>
-
-                            <a href="#"
-                               class="nav-item nav-link">
-
-                                Kayıt Ol
-
-                            </a>
-
-                        </div>
-
                     </div>
 
                 </nav>
@@ -323,7 +322,6 @@
         </div>
 
     </div>
-    ```
 
     <!-- FOOTER -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
@@ -436,4 +434,4 @@
 </body>
 
 </html>
-```
+

@@ -1,0 +1,182 @@
+﻿
+@model List<KyFashionHouse.core.Models.Product>
+
+@{
+    ViewData["Title"] = "T-Shirtler";
+}
+
+<div class="container-fluid py-5">
+
+    <!-- SAYFA BAŞLIĞI -->
+    <div class="text-center mb-5">
+        <h2 class="font-weight-bold">T-Shirtler</h2>
+        <p class="text-muted">
+            Tarzına uygun T-Shirt modellerini keşfet.
+        </p>
+    </div>
+
+    <div class="row px-xl-5">
+
+        <!-- FİLTRE -->
+        <div class="col-lg-3 col-md-4">
+            <div class="border p-4 mb-4">
+
+                <h5 class="font-weight-bold mb-4">Filtrele</h5>
+
+                <h6 class="font-weight-bold">Beden</h6>
+
+                <div class="mb-4">
+                    <label class="d-block">
+                        <input type="checkbox" /> S
+                    </label>
+                    <label class="d-block">
+                        <input type="checkbox" /> M
+                    </label>
+                    <label class="d-block">
+                        <input type="checkbox" /> L
+                    </label>
+                    <label class="d-block">
+                        <input type="checkbox" /> XL
+                    </label>
+                </div>
+
+                <h6 class="font-weight-bold">Fiyat</h6>
+
+                <label class="d-block">
+                    <input type="checkbox" /> 0₺ - 500₺
+                </label>
+                <label class="d-block">
+                    <input type="checkbox" /> 500₺ - 1000₺
+                </label>
+                <label class="d-block">
+                    <input type="checkbox" /> 1000₺ ve üzeri
+                </label>
+
+            </div>
+        </div>
+
+        <!-- ÜRÜNLER -->
+        <div class="col-lg-9 col-md-8">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="font-weight-bold mb-0">T-Shirtler</h5>
+
+                <select class="form-control" style="width: 220px;">
+                    <option>Önerilen</option>
+                    <option>Fiyat: Düşükten Yükseğe</option>
+                    <option>Fiyat: Yüksekten Düşüğe</option>
+                    <option>Yeni Ürünler</option>
+                </select>
+            </div>
+
+            <div class="row">
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var urun in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+
+
+
+                            <div class="card product-item border-0 mb-4">
+
+                                <a asp-controller="Products"
+                                   asp-action="Details"
+                                   asp-route-id="@urun.Id"
+                                   class="text-decoration-none text-dark">
+
+                                    <!-- ÜRÜN RESMİ -->
+                                    <div class="product-img position-relative overflow-hidden">
+                                        <img class="img-fluid w-100"
+                                             src="@Url.Content(urun.ImageUrl)"
+                                             alt="@urun.Name">
+                                    </div>
+
+                                    <!-- ÜRÜN BİLGİLERİ -->
+                                    <div class="card-body text-center p-3">
+
+                                        <h6 class="text-truncate mb-2">
+                                            @urun.Name
+                                        </h6>
+
+                                        @if (urun.Stock > 0)
+                                        {
+                                            <p class="text-success mb-2">
+                                                Stokta @urun.Stock adet var
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-danger mb-2">
+                                                Stokta Yok
+                                            </p>
+                                        }
+
+                                        <div class="d-flex justify-content-center">
+                                            <h6>@urun.Price.ToString("N2")₺</h6>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+
+
+                                <!-- BUTONLAR -->
+                                <div class="card-footer bg-white border-0 pt-0 text-center">
+
+                                    <a href="#"
+                                       class="btn btn-sm btn-outline-primary mr-1">
+                                        <i class="fas fa-eye mr-1"></i>
+                                        Detay
+                                    </a>
+
+                                    @if (urun.Stock > 0)
+                                    {
+                                        <form asp-controller="Cart"
+                                              asp-action="SepeteEkle"
+                                              method="post"
+                                              class="d-inline">
+
+                                            <input type="hidden"
+                                                   name="id"
+                                                   value="@urun.Id" />
+
+                                            <button type="submit"
+                                                    class="btn btn-sm btn-primary">
+                                                <i class="fas fa-shopping-cart mr-1"></i>
+                                                Sepete Ekle
+                                            </button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <button type="button"
+                                                class="btn btn-sm btn-secondary"
+                                                disabled>
+                                            <i class="fas fa-ban mr-1"></i>
+                                            Stokta Yok
+                                        </button>
+                                    }
+
+                                </div>
+                            </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p class="text-muted">
+                            Henüz kayıtlı T-Shirt bulunmuyor.
+                        </p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+```

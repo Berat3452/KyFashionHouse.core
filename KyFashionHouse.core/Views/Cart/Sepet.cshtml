@@ -1,0 +1,148 @@
+﻿@model List<KyFashionHouse.core.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Sepetim";
+    decimal genelToplam = Model.Sum(urun => urun.Price * urun.Quantity);
+}
+
+<div class="container-fluid py-5">
+    <div class="text-center mb-5">
+        <h2 class="font-weight-bold">Sepetim</h2>
+        <p class="text-muted">Sepetindeki ürünleri buradan inceleyebilirsin.</p>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Ürün Adı</th>
+                        <th>Birim Fiyat</th>
+                        <th>Adet</th>
+                        <th>Ara Toplam</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var urun in Model)
+                    {
+                        <tr>
+                            <td class="align-middle">
+                                <img src="@Url.Content(urun.ImageUrl)"
+                                     alt="@urun.Name"
+                                     style="width: 70px; height: 70px; object-fit: contain;" />
+                            </td>
+
+                            <td class="align-middle">@urun.Name</td>
+
+                            <td class="align-middle">
+                                @urun.Price.ToString("N2")₺
+                            </td>
+
+                            <td class="align-middle">
+                                <form asp-controller="Cart"
+                                      asp-action="SepettenSil"
+                                      method="post">
+
+                                    <input type="hidden" name="id" value="@urun.ProductId" />
+
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                        Sil
+                                    </button>
+                                </form>
+                            </td>
+
+                            <td class="align-middle">
+                                <div class="d-flex justify-content-center align-items-center">
+
+                                    <!-- ADET AZALT -->
+                                    <form asp-controller="Cart"
+                                          asp-action="AdetAzalt"
+                                          method="post"
+                                          class="d-inline">
+
+                                        <input type="hidden" name="id" value="@urun.ProductId" />
+
+                                        <button type="submit" class="btn btn-sm btn-secondary">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </form>
+
+                                    <!-- ÜRÜN ADEDİ -->
+                                    <span class="mx-3 font-weight-bold">
+                                        @urun.Quantity
+                                    </span>
+
+                                    <!-- ADET ARTIR -->
+                                    <form asp-controller="Cart"
+                                          asp-action="AdetArtir"
+                                          method="post"
+                                          class="d-inline">
+
+                                        <input type="hidden" name="id" value="@urun.ProductId" />
+
+                                        <button type="submit" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </td>
+                            <td class="align-middle">
+                                @((urun.Price * urun.Quantity).ToString("N2"))₺
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row justify-content-end mt-4">
+            <div class="col-md-5 col-lg-4">
+                <div class="border p-4">
+                    <h5 class="font-weight-bold mb-3">Sepet Özeti</h5>
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <span>Genel Toplam</span>
+                        <strong>@genelToplam.ToString("N2")₺</strong>
+                    </div>
+
+                    <a asp-controller="Products"
+                       asp-action="Tshirtler"
+                       class="btn btn-outline-primary btn-block mb-2">
+                        Alışverişe Devam Et
+                    </a>
+
+                    <a asp-controller="Checkout"
+                       asp-action="Index"
+                       class="btn btn-primary">
+                        Siparişi Tamamla
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-5">
+            <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+
+            <h5>Sepetin şu anda boş.</h5>
+
+            <p class="text-muted">
+                Beğendiğin ürünleri sepetine ekleyerek alışverişe başlayabilirsin.
+            </p>
+
+            <a asp-controller="Home"
+               asp-action="Tshirtler"
+               class="btn btn-primary">
+                Ürünleri İncele
+            </a>
+        </div>
+    }
+</div>
